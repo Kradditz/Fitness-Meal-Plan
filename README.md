@@ -19,7 +19,9 @@ FitJourney is a small front-end project that demonstrates:
   - BMI & calorie estimation.
   - Smooth scrolling and small UX enhancements.
 - HTML5 form validation on the contact page.
-- Basic performance optimisations (lazy loading, CDN via GitHub Pages).
+- Basic performance optimisations:
+  - Lazy loading for non-critical images.
+  - Hosting on GitHub Pages (served via a CDN).
 
 The project is purely front-end (no real backend).  
 All data (plans, workouts, testimonials) is static and hard-coded.
@@ -29,14 +31,16 @@ All data (plans, workouts, testimonials) is static and hard-coded.
 ## 2. Pages & Functionality
 
 ### 2.1 Home (`index.html`)
+
 - Hero section with **background image** and call-to-action.
 - Short overview of:
   - Workouts
   - Nutrition
   - Tracking (BMI & calories)
-- Button that links directly to the “Plans” page.
+- Button that links directly to the **Plans** page.
 
 ### 2.2 Plans (`plans.html`)
+
 - Three main training plans:
   - **Starter Plan**
   - **Fat Loss Focus**
@@ -47,6 +51,7 @@ All data (plans, workouts, testimonials) is static and hard-coded.
 - Extra explanation section describing how to choose a plan.
 
 ### 2.3 Workouts (`workouts.html`)
+
 - “Workouts by Plan” cards:
   - Starter, Fat Loss Focus, Muscle Gain.
 - When opened from a specific plan, the related workout card is visually highlighted.
@@ -56,6 +61,7 @@ All data (plans, workouts, testimonials) is static and hard-coded.
   - Includes a small note about effort and expectations.
 
 ### 2.4 Nutrition & Tools (`nutrition.html`)
+
 - Two sample day meal templates:
   - Muscle Gain day.
   - Fat Loss day.
@@ -71,6 +77,7 @@ All data (plans, workouts, testimonials) is static and hard-coded.
   - Results are shown in **larger, easy-to-read boxes**.
 
 ### 2.5 Testimonials / Success Stories (`testimonials.html`)
+
 - Three success story cards:
   - **Jade – Starter Plan**
   - **Andre – Fat Loss Focus**
@@ -87,22 +94,23 @@ All data (plans, workouts, testimonials) is static and hard-coded.
   - “Want to be the next success story?” + **View Plans** button.
 
 ### 2.6 Contact (`contact.html`)
+
 - Simple contact form with HTML5 validation:
   - **Full Name** (required)
-  - **Email** (required, type="email")
+  - **Email** (required, `type="email"`)
   - **Address** (required)
-  - **Telephone** (required, type="tel")
+  - **Telephone** (required, `type="tel"` with pattern)
   - **Message** (required)
-- Form is marked `novalidate` in HTML and handled via JavaScript to:
-  - Show a feedback message area.
-  - Demonstrate validation logic for the assignment.
+- Form is set up with:
+  - `action="#"` and `method="post"` to demonstrate a realistic structure.
+  - JavaScript (`js/form-validation.js`) used to show a feedback message and demonstrate custom validation logic for the assignment.
 - All fields are full-width and styled using Skeleton.
 
 ---
 
 ## 3. Navigation & Layout
 
-- Fixed top navigation bar:
+- **Fixed top navigation bar**:
   - Stays visible while scrolling.
   - Contains links: **Home, Plans, Workouts, Nutrition, Testimonials, Contact**.
   - Active page link is highlighted in teal.
@@ -118,8 +126,8 @@ All data (plans, workouts, testimonials) is static and hard-coded.
 
 - **HTML5**
 - **CSS3**
-  - [Normalize.css](https://necolas.github.io/normalize.css/)
-  - [Skeleton CSS 2.0.4](http://getskeleton.com/)
+  - [Normalize.css](https://necolas.github.io/normalize.css/) (via CDN)
+  - [Skeleton CSS 2.0.4](http://getskeleton.com/) (via CDN)
   - Custom `css/style.css` for:
     - Fixed header
     - Cards
@@ -128,7 +136,7 @@ All data (plans, workouts, testimonials) is static and hard-coded.
     - BMI result boxes
 - **JavaScript**
   - `js/main.js` – shared scripts (BMI & calorie calculator, year in footer, etc.).
-  - `js/form-validation.js` – contact form validation logic.
+  - `js/form-validation.js` – contact form validation / feedback handling.
 
 ---
 
@@ -136,9 +144,7 @@ All data (plans, workouts, testimonials) is static and hard-coded.
 
 ### 5.1 Lazy Loading
 
-To reduce initial load and improve Lighthouse performance:
-
-- Non-critical images (especially those **below the fold**) use:
+To reduce initial load and improve Lighthouse performance, non-critical images (especially those **below the fold**) use `loading="lazy"`:
 
 ```html
 <img src="img/jade.png"
