@@ -1,0 +1,502 @@
+/* =========================
+   Global layout & typography
+   ========================= */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: #eef3f5;
+  color: #374151;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 70px;          /* ⬅️ space for fixed header */
+}
+
+/* =========================
+   Header / Navigation (Fixed, Taller, Bigger Links)
+   ========================= */
+
+.header {
+  position: fixed;             /* ⬅️ fixed bar */
+  top: 0;
+  left: 0;
+  width: 100%;                 /* span full width */
+  z-index: 1000;
+  background: #0b1323;
+  padding: 18px 0;             /* controls bar height */
+  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.35);
+}
+
+/* Site title (FitJourney) */
+.site-title {
+  margin: 0;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.site-title a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Nav list */
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+/* Individual items */
+.nav-list li {
+  margin: 0;
+}
+
+/* Nav links – bigger */
+.nav-list a {
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+/* Active / hover state */
+.nav-list a:hover,
+.nav-list a.active {
+  color: #22d3ee;
+}
+
+
+/* =========================
+   Hero (home page)
+   ========================= */
+
+.hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #f9fafb;
+  padding: 4rem 0;
+
+  background-image:
+    linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.6)),
+    url("../img/home-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* hero text – bright & readable */
+.hero h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  color: #ffffff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+/* hero CTA */
+.hero .button-primary {
+  background-color: #14b8a6;
+  border: none;
+  font-weight: 600;
+  padding: 0.9rem 2.2rem;
+  font-size: 1.1rem;
+}
+
+/* =========================
+   Sections (shared)
+   ========================= */
+
+.section {
+  padding: 4rem 0;
+  background: #ffffff;      /* content on white */
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* subtle teal underline under section titles */
+.section h2 {
+  position: relative;
+}
+
+.section h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #14b8a6;
+  margin: 0.6rem auto 0;
+  border-radius: 999px;
+}
+
+.section p {
+  line-height: 1.5;
+}
+
+/* intro paragraph under page headings */
+.plans-intro {
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  text-align: center;
+  line-height: 1.5;
+  color: #6b7280;
+}
+
+/* =========================
+   Buttons (unified teal)
+   ========================= */
+
+.button,
+.button-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  background-color: #14b8a6;
+  border-color: #14b8a6;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.6rem 1.6rem;
+  font-size: 0.95rem;
+}
+
+.button:hover,
+.button-primary:hover,
+.button:focus,
+.button-primary:focus {
+  background-color: #0d9488;   /* darker teal hover */
+  border-color: #0d9488;
+  color: #ffffff;
+}
+
+/* =========================
+   Tables & forms
+   ========================= */
+
+.u-full-width {
+  box-sizing: border-box;
+}
+
+table.u-full-width {
+  margin-bottom: 2rem;
+}
+
+form {
+  margin-top: 1rem;
+}
+
+/* BMI + calorie result boxes – BIGGER */
+.result-box {
+  margin-top: 1rem;
+  padding: 1rem 1.25rem;
+  border-radius: 4px;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  font-size: 1.3rem;      /* noticeably bigger */
+  line-height: 1.6;
+}
+
+/* =========================
+   Footer
+   ========================= */
+
+.footer {
+  background: #0f172a;
+  color: #e5e7eb;
+  text-align: center;
+  padding: 1.5rem 0;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+}
+
+/* =========================
+   Card styles (Plans + Workouts)
+   ========================= */
+
+/* whole card clickable */
+.plan-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.plan-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08);
+  height: 100%;
+  border: 1px solid #e5e7eb;
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    border-color 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.plan-card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.plan-card p {
+  margin-bottom: 1rem;
+  color: #4b5563;
+}
+
+.plan-card ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.plan-card-note,
+.workout-card-note {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.plan-card-link:hover .plan-card,
+.plan-card-link:focus .plan-card {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.18);
+  border-color: #14b8a6;
+  background-color: #f7fafc;  /* very light variation on hover */
+}
+
+/* extra section under cards on Plans */
+.plans-extra {
+  background: #f7fafc;       /* very light blue-grey */
+}
+
+.plans-list {
+  padding-left: 1.3rem;
+  line-height: 1.6;
+}
+
+.plans-list li + li {
+  margin-top: 0.4rem;
+}
+
+.plans-table {
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* selected workout card when coming from plans */
+.plan-selected {
+  border: 2px solid #14b8a6;
+  box-shadow: 0 0 12px rgba(20, 184, 166, 0.5);
+}
+
+/* Nutrition sections */
+.plan-meals {
+  margin-bottom: 2rem;
+}
+
+/* =========================
+   Responsive tweaks
+   ========================= */
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 70vh;
+    padding: 3rem 1rem;
+  }
+
+  .hero h2 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .nav-list li {
+    margin-left: 0.7rem;
+  }
+
+  .plan-card {
+    margin-bottom: 1.5rem;
+  }
+}
+/* =========================
+   Testimonials & Stories
+   ========================= */
+
+/* Smooth scroll when clicking cards */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Summary cards section */
+.testimonials-section {
+  background: #f7fafc; /* light background to match the site */
+}
+
+.testimonial-grid {
+  margin-top: 2.5rem;
+}
+
+.testimonial-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.75rem 1.5rem 2rem;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08);
+  border: 1px solid #e5e7eb;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    border-color 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.18);
+  border-color: #14b8a6; /* teal accent */
+}
+
+.testimonial-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.testimonial-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #14b8a6;
+}
+
+.testimonial-name {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #111827;
+}
+
+.testimonial-age {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-top: 0.1rem;
+}
+
+.testimonial-quote {
+  margin-top: 0.75rem;
+  font-style: italic;
+  color: #374151;
+  line-height: 1.6;
+}
+
+/* Make whole card clickable without underline */
+.testimonial-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Text + button under cards */
+.testimonials-footer-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 3.5rem;          /* a bit more spacing from the cards */
+  margin-bottom: 2.5rem;       /* creates a gap before the story section */
+  font-size: 1.05rem;          /* bigger text as requested */
+  color: #4b5563;
+}
+
+.testimonials-cta {
+  padding-inline: 1.8rem;
+}
+
+/* Expanded story sections under the cards */
+.story-section {
+  background: #ffffff;
+  scroll-margin-top: 100px;    /* prevents sticky header covering title */
+  padding-top: 60px;
+  padding-bottom: 60px;
+  margin-top: 24px;            /* extra visual gap between sections */
+}
+
+.story-section .row {
+  align-items: center;
+}
+
+/* Smaller, neat images for Jade / Andre / Leah */
+.story-photo {
+  width: 100%;
+  max-width: 320px;            /* hard cap so they never get huge */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.15);
+  object-fit: cover;
+}
+
+/* Story quote text */
+.story-quote {
+  margin-top: 1rem;
+  font-style: italic;
+  color: #111827;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .testimonial-card {
+    margin-bottom: 1.5rem;
+  }
+
+  .testimonials-footer-note {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .story-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .story-photo {
+    max-width: 260px;
+    margin-bottom: 1.5rem;
+  }
+}
+

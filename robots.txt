@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kradditz.github.io/fitness-plan-and-mal/contact.html

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitJourney | Nutrition</title>
+  <meta name="description" content="Basic nutrition ideas and a BMI & calorie estimator to match your training plan.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+  <div class="container">
+    <div class="row">
+      <div class="six columns">
+        <h1 class="site-title">
+          <a href="index.html">FitJourney</a>
+        </h1>
+      </div>
+
+      <div class="six columns">
+        <nav>
+          <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="plans.html">Plans</a></li>
+            <li><a href="workouts.html">Workouts</a></li>
+            <li><a href="nutrition.html" class="active">Nutrition</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h2>Nutrition Basics</h2>
+        <p class="plans-intro">
+          You don’t need a perfect diet. You just need something you can actually stick to that matches your training plan.
+        </p>
+
+        <div class="row plan-meals" id="starterMeals" data-plan="starter">
+          <div class="six columns">
+            <h3>Starter Plan – Sample Day</h3>
+            <ul>
+              <li><strong>Breakfast:</strong> Oats with milk, banana, peanut butter</li>
+              <li><strong>Lunch:</strong> Rice, chicken, mixed veggies</li>
+              <li><strong>Snack:</strong> Greek yogurt with fruit</li>
+              <li><strong>Dinner:</strong> Pasta with ground beef and salad</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row plan-meals" id="fatlossMeals" data-plan="fatloss">
+          <div class="six columns">
+            <h3>Fat Loss Focus – Sample Day</h3>
+            <ul>
+              <li><strong>Breakfast:</strong> Eggs, wholegrain toast, fruit</li>
+              <li><strong>Lunch:</strong> Chicken salad with light dressing</li>
+              <li><strong>Snack:</strong> Apple & a handful of nuts</li>
+              <li><strong>Dinner:</strong> Fish, potatoes, vegetables</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row plan-meals" id="muscleMeals" data-plan="muscle">
+          <div class="six columns">
+            <h3>Muscle Gain – Sample Day</h3>
+            <ul>
+              <li><strong>Breakfast:</strong> Oats with milk, berries & protein shake</li>
+              <li><strong>Lunch:</strong> Rice, chicken or beef, vegetables</li>
+              <li><strong>Snack:</strong> Wrap or sandwich with lean meat & cheese</li>
+              <li><strong>Dinner:</strong> Pasta or potatoes, meat, veg, plus a dessert like yogurt or fruit</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="text-muted">
+          These are just examples – not strict meal plans. The main idea: keep protein in each meal, choose mostly whole foods, and match your calories to your goal.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>BMI &amp; Calorie Estimator</h2>
+        <p class="plans-intro">
+          Use this tool as a rough guide. It’s not a medical diagnosis, just a starting point.
+        </p>
+
+        <form id="bmiForm">
+          <div class="row">
+            <div class="four columns">
+              <label for="height">Height (cm)</label>
+              <input type="number" id="height" class="u-full-width" step="0.1" min="0" required>
+            </div>
+            <div class="four columns">
+              <label for="weight">Weight (kg)</label>
+              <input type="number" id="weight" class="u-full-width" step="0.1" min="0" required>
+            </div>
+            <div class="four columns">
+              <label for="age">Age</label>
+              <input type="number" id="age" class="u-full-width" min="0" required>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="six columns">
+              <label>Sex</label>
+              <label>
+                <input type="radio" name="sex" value="male" checked> Male
+              </label>
+              <br>
+              <label>
+                <input type="radio" name="sex" value="female"> Female
+              </label>
+            </div>
+            <div class="six columns">
+              <label for="activity">Activity Level</label>
+              <select id="activity" class="u-full-width">
+                <option value="1.2">Sedentary (little or no exercise)</option>
+                <option value="1.375">Lightly active (1–3 days/week)</option>
+                <option value="1.55">Moderately active (3–5 days/week)</option>
+                <option value="1.725">Very active (6–7 days/week)</option>
+                <option value="1.9">Extra active (physical job or 2× training)</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="button button-primary">Calculate</button>
+        </form>
+
+        <div class="row">
+          <div class="six columns">
+            <div id="bmiResult" class="result-box"></div>
+          </div>
+          <div class="six columns">
+            <div id="calorieResult" class="result-box"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> FitJourney. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/bmi.js"></script>
+  <script>
+    // Show only meals for selected plan (if any)
+    document.addEventListener("DOMContentLoaded", function () {
+      const params = new URLSearchParams(window.location.search);
+      const selected = params.get("plan");
+      if (!selected) return; // show all if no plan set
+
+      document.querySelectorAll(".plan-meals").forEach(function (block) {
+        if (block.dataset.plan === selected) {
+          block.style.display = "block";
+        } else {
+          block.style.display = "none";
+        }
+      });
+    });
+  </script>
+</body>
+</html>

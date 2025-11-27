@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitJourney | Training Plans</title>
+  <meta name="description" content="Starter, fat loss and muscle gain training plans you can follow consistently.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+  <div class="container">
+    <div class="row">
+      <div class="six columns">
+        <h1 class="site-title">
+          <a href="index.html">FitJourney</a>
+        </h1>
+      </div>
+
+      <div class="six columns">
+        <nav>
+          <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="plans.html" class="active">Plans</a></li>
+            <li><a href="workouts.html">Workouts</a></li>
+            <li><a href="nutrition.html">Nutrition</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+
+  <main>
+    <!-- Main plans cards -->
+    <section class="section plans-section">
+      <div class="container">
+        <h2>Training Plans</h2>
+        <p class="plans-intro">
+          Pick the style that matches your lifestyle. No “12-week shred or you’re a failure” energy here – just simple plans you can actually stick to.
+        </p>
+
+        <div class="row">
+          <article class="four columns">
+            <a href="workouts.html?plan=starter" class="plan-card-link">
+              <div class="plan-card">
+                <h3>Starter Plan</h3>
+                <p>
+                  3 days a week, 45 minutes per session. Perfect if you’re just getting back into moving again.
+                </p>
+                <ul>
+                  <li>Full-body workouts</li>
+                  <li>Basic warm-up &amp; cool-down</li>
+                  <li>Beginner-friendly exercises</li>
+                </ul>
+                <p class="plan-card-note">Click anywhere on this card to view Starter workouts.</p>
+              </div>
+            </a>
+          </article>
+
+          <article class="four columns">
+            <a href="workouts.html?plan=fatloss" class="plan-card-link">
+              <div class="plan-card">
+                <h3>Fat Loss Focus</h3>
+                <p>
+                  4 days a week, mix of strength and light cardio to keep things interesting and sustainable.
+                </p>
+                <ul>
+                  <li>Circuits &amp; supersets</li>
+                  <li>Step-count / activity targets</li>
+                  <li>Higher-rep training blocks</li>
+                </ul>
+                <p class="plan-card-note">Click to view Fat Loss workouts and related nutrition.</p>
+              </div>
+            </a>
+          </article>
+
+          <article class="four columns">
+            <a href="workouts.html?plan=muscle" class="plan-card-link">
+              <div class="plan-card">
+                <h3>Muscle Gain</h3>
+                <p>
+                  Push, pull, legs split designed for progressive overload and getting actually stronger, not just tired.
+                </p>
+                <ul>
+                  <li>Gym-based compound movements</li>
+                  <li>Logbook-friendly sets &amp; reps</li>
+                  <li>Focus on long-term progression</li>
+                </ul>
+                <p class="plan-card-note">Click to view Muscle Gain workouts and meals.</p>
+              </div>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Extra guidance + schedule -->
+    <section class="section plans-extra">
+      <div class="container">
+        <div class="row">
+          <div class="six columns">
+            <h3>How to Choose a Plan</h3>
+            <ol class="plans-list">
+              <li><strong>New or returning to training?</strong> Start with the <em>Starter Plan</em> for 4–6 weeks.</li>
+              <li><strong>Goal is mainly fat loss?</strong> Choose <em>Fat Loss Focus</em> and keep steps + sleep in check.</li>
+              <li><strong>Already comfortable in the gym?</strong> Go straight to <em>Muscle Gain</em> and track your lifts.</li>
+              <li><strong>Not sure?</strong> Start with Starter, then move to Fat Loss or Muscle Gain depending on how you feel.</li>
+            </ol>
+          </div>
+
+          <div class="six columns">
+            <h3>Sample Weekly Schedule</h3>
+            <table class="u-full-width plans-table">
+              <thead>
+                <tr>
+                  <th>Plan</th>
+                  <th>Days</th>
+                  <th>Example Split</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Starter</td>
+                  <td>3 days</td>
+                  <td>Mon – Wed – Fri full-body</td>
+                </tr>
+                <tr>
+                  <td>Fat Loss</td>
+                  <td>4 days</td>
+                  <td>Upper / Lower / Cardio-circuits / Full-body</td>
+                </tr>
+                <tr>
+                  <td>Muscle Gain</td>
+                  <td>5–6 days</td>
+                  <td>Push / Pull / Legs / Upper / Lower (+ optional arms)</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="text-muted">
+              Rest days still count as part of the plan. Use them for light walking, stretching and not hating your life.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> FitJourney. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

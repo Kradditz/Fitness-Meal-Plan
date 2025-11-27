@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitJourney | Workouts</title>
+  <meta name="description" content="Example home and gym workout templates for different training plans.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+  <div class="container">
+    <div class="row">
+      <div class="six columns">
+        <h1 class="site-title">
+          <a href="index.html">FitJourney</a>
+        </h1>
+      </div>
+
+      <div class="six columns">
+        <nav>
+          <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="plans.html">Plans</a></li>
+            <li><a href="workouts.html" class="active">Workouts</a></li>
+            <li><a href="nutrition.html">Nutrition</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h2>Workouts by Plan</h2>
+        <p class="plans-intro">
+          These are simple example templates. The idea is consistency, not perfection.
+        </p>
+
+        <div class="row">
+          <!-- Starter workouts -->
+          <article class="four columns">
+            <a href="nutrition.html?plan=starter" class="plan-card-link workout-card-link">
+              <div class="plan-card workout-card" data-plan="starter">
+                <h3>Starter Plan Workouts</h3>
+                <p>3× per week full-body, 45 minutes per session.</p>
+                <ul>
+                  <li><strong>Day A:</strong> Squats, push-ups (or wall push-ups), dumbbell row, glute bridge, plank</li>
+                  <li><strong>Day B:</strong> Lunges, incline push-ups, hip hinge (light deadlift or kettlebell), shoulder press, side plank</li>
+                  <li>Finish each session with 5–10 mins easy walking or cycling.</li>
+                </ul>
+                <p class="workout-card-note">Click this card to view Starter meal ideas.</p>
+              </div>
+            </a>
+          </article>
+
+          <!-- Fat loss workouts -->
+          <article class="four columns">
+            <a href="nutrition.html?plan=fatloss" class="plan-card-link workout-card-link">
+              <div class="plan-card workout-card" data-plan="fatloss">
+                <h3>Fat Loss Focus Workouts</h3>
+                <p>4× per week with a mix of strength and circuits.</p>
+                <ul>
+                  <li><strong>Day 1 – Upper:</strong> Bench press, row, shoulder press, lat pulldown, curls</li>
+                  <li><strong>Day 2 – Lower:</strong> Squats, Romanian deadlifts, leg press, calf raises</li>
+                  <li><strong>Day 3 – Circuits:</strong> 30s work / 30s rest – bodyweight squats, push-ups, rows, mountain climbers, kettlebell swings</li>
+                  <li><strong>Day 4 – Full Body:</strong> Mix of lighter versions of Day 1 + 2</li>
+                </ul>
+                <p class="workout-card-note">Click to view Fat Loss meal ideas.</p>
+              </div>
+            </a>
+          </article>
+
+          <!-- Muscle gain workouts -->
+          <article class="four columns">
+            <a href="nutrition.html?plan=muscle" class="plan-card-link workout-card-link">
+              <div class="plan-card workout-card" data-plan="muscle">
+                <h3>Muscle Gain Workouts</h3>
+                <p>Push / Pull / Legs style split aimed at progression.</p>
+                <ul>
+                  <li><strong>Push:</strong> Bench press, incline press, overhead press, lateral raises, triceps dips/extensions</li>
+                  <li><strong>Pull:</strong> Deadlifts or rack pulls, pull-ups/lat pulldowns, rows, face pulls, biceps curls</li>
+                  <li><strong>Legs:</strong> Squats, leg press, lunges, hamstring curls, calves</li>
+                  <li>Repeat with variations for 4–5 days per week total.</li>
+                </ul>
+                <p class="workout-card-note">Click to view Muscle Gain meal ideas.</p>
+              </div>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> FitJourney. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Highlight the selected plan if we came from plans.html
+    document.addEventListener("DOMContentLoaded", function () {
+      const params = new URLSearchParams(window.location.search);
+      const selected = params.get("plan");
+      if (!selected) return;
+
+      const card = document.querySelector('.workout-card[data-plan="' + selected + '"]');
+      if (card) {
+        card.classList.add("plan-selected");
+        card.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  </script>
+</body>
+</html>
