@@ -223,3 +223,32 @@ Copy code
   </url>
 </urlset>
 These files sit alongside index.html in the root folder and support basic SEO and crawling.
+
+
+---
+
+## 6. Screenshots
+
+### 6.1 Home Page (Index)
+
+![Home page hero and navigation](docs/images/indexpg.png)
+
+### 6.2 Plans Page – Cards
+
+![Plans page showing the three plan cards](docs/images/planspg%20showing%20cards.png)
+
+### 6.3 Nutrition – BMI & Calorie Calculator (JS working)
+
+![BMI and calorie calculator with JavaScript results visible](docs/images/bmi%20showing%20js.png)
+
+### 6.4 Lazy Loading Example
+
+![Page section demonstrating image with lazy loading enabled](docs/images/image%20with%20lazyload.png)
+
+### 6.5 UI Example – Form / Page Layout
+
+![Screenshot showing that the UI exists and is rendered correctly](docs/images/shows%20ui%20exists.png)
+
+### 6.6 Lighthouse Performance Report (Desktop)
+
+![Lighthouse performance results for the home page](docs/images/lighthouse%20results.png)
