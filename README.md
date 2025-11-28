@@ -148,12 +148,14 @@ To reduce initial load and improve Lighthouse performance, non-critical images (
 
 ```html
 <img src="img/jade.png"
+``` 
      alt="Jade after completing the Starter Plan"
      class="story-photo"
      loading="lazy">
+     
 This is used particularly on the larger testimonial images in the expanded story sections.
 
-5.2 Hosting / CDN
+### 5.2 Hosting / CDN
 The site is hosted on GitHub Pages, which serves static files via a global CDN.
 This improves:
 
@@ -163,7 +165,7 @@ Static asset delivery (HTML, CSS, JS, images)
 
 Overall reliability and performance
 
-5.3 Lighthouse Results
+### 5.3 Lighthouse Results
 A Lighthouse report was generated in Chrome DevTools (Desktop) for the home page.
 
 Performance: 83
@@ -186,7 +188,7 @@ Speed Index: 1.0 s
 
 A screenshot of the Lighthouse report is included in the project documentation.
 
-5.4 SEO, robots.txt & sitemap.xml
+### 5.4 SEO, robots.txt & sitemap.xml
 To help search engines crawl and index the site:
 
 A robots.txt file is included at the site root:
@@ -226,7 +228,6 @@ These files sit alongside index.html in the root folder and support basic SEO an
 
 
 ---
-
 ## 6. Screenshots
 
 ### 6.1 Home Page (Index)
