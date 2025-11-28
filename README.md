@@ -6,8 +6,11 @@ FitJourney helps users pick a training plan, follow matching workouts, see simpl
 
 The site is deployed on **GitHub Pages** here:
 
-> https://kradditz.github.io/Fitness-Meal-Plan/
+> https://github.com/kradditz/Fitness-Meal-Plan
 
+**Live Site**
+
+> https://kradditz.github.io/Fitness-Meal-Plan/
 ---
 
 ## 1. Project Overview
