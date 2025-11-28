@@ -5,7 +5,7 @@ FitJourney helps users pick a training plan, follow matching workouts, see simpl
 
 The site is deployed on **GitHub Pages** here:
 
-> https://kradditz.github.io/fitness-plan-and-mal/
+> https://kradditz.github.io/Fitness-Meal-Plan/
 
 ---
 
@@ -34,8 +34,8 @@ All data (plans, workouts, testimonials) is static and hard-coded.
 
 - Hero section with **background image** and call-to-action.
 - Short overview of:
-  - Workouts
-  - Nutrition
+  - Workouts  
+  - Nutrition  
   - Tracking (BMI & calories)
 - Button that links directly to the **Plans** page.
 
@@ -96,10 +96,10 @@ All data (plans, workouts, testimonials) is static and hard-coded.
 ### 2.6 Contact (`contact.html`)
 
 - Simple contact form with HTML5 validation:
-  - **Full Name** (required)
-  - **Email** (required, `type="email"`)
-  - **Address** (required)
-  - **Telephone** (required, `type="tel"` with pattern)
+  - **Full Name** (required)  
+  - **Email** (required, `type="email"`)  
+  - **Address** (required)  
+  - **Telephone** (required, `type="tel"` with pattern)  
   - **Message** (required)
 - Form is set up with:
   - `action="#"` and `method="post"` to demonstrate a realistic structure.
@@ -126,8 +126,8 @@ All data (plans, workouts, testimonials) is static and hard-coded.
 
 - **HTML5**
 - **CSS3**
-  - [Normalize.css](https://necolas.github.io/normalize.css/) (via CDN)
-  - [Skeleton CSS 2.0.4](http://getskeleton.com/) (via CDN)
+  - [Normalize.css](https://necolas.github.io/normalize.css/) (via CDN)  
+  - [Skeleton CSS 2.0.4](http://getskeleton.com/) (via CDN)  
   - Custom `css/style.css` for:
     - Fixed header
     - Cards
@@ -140,7 +140,7 @@ All data (plans, workouts, testimonials) is static and hard-coded.
 
 ---
 
-## 5. Performance & Optimisations
+## 5. Performance, SEO & Optimisations
 
 ### 5.1 Lazy Loading
 
@@ -151,3 +151,75 @@ To reduce initial load and improve Lighthouse performance, non-critical images (
      alt="Jade after completing the Starter Plan"
      class="story-photo"
      loading="lazy">
+This is used particularly on the larger testimonial images in the expanded story sections.
+
+5.2 Hosting / CDN
+The site is hosted on GitHub Pages, which serves static files via a global CDN.
+This improves:
+
+Time to first byte (TTFB)
+
+Static asset delivery (HTML, CSS, JS, images)
+
+Overall reliability and performance
+
+5.3 Lighthouse Results
+A Lighthouse report was generated in Chrome DevTools (Desktop) for the home page.
+
+Performance: 83
+
+Accessibility: 92
+
+Best Practices: 100
+
+SEO: 100
+
+Key metrics:
+
+First Contentful Paint (FCP): 0.7 s
+
+Largest Contentful Paint (LCP): 3.0 s
+
+Total Blocking Time (TBT): 0 ms
+
+Speed Index: 1.0 s
+
+A screenshot of the Lighthouse report is included in the project documentation.
+
+5.4 SEO, robots.txt & sitemap.xml
+To help search engines crawl and index the site:
+
+A robots.txt file is included at the site root:
+
+txt
+Copy code
+User-agent: *
+Allow: /
+
+Sitemap: https://kradditz.github.io/Fitness-Meal-Plan/sitemap.xml
+A sitemap.xml file is also included at the root, listing all key pages:
+
+xml
+Copy code
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://kradditz.github.io/Fitness-Meal-Plan/</loc>
+  </url>
+  <url>
+    <loc>https://kradditz.github.io/Fitness-Meal-Plan/plans.html</loc>
+  </url>
+  <url>
+    <loc>https://kradditz.github.io/Fitness-Meal-Plan/workouts.html</loc>
+  </url>
+  <url>
+    <loc>https://kradditz.github.io/Fitness-Meal-Plan/nutrition.html</loc>
+  </url>
+  <url>
+    <loc>https://kradditz.github.io/Fitness-Meal-Plan/testimonials.html</loc>
+  </url>
+  <url>
+    <loc>https://kradditz.github.io/Fitness-Meal-Plan/contact.html</loc>
+  </url>
+</urlset>
+These files sit alongside index.html in the root folder and support basic SEO and crawling.
