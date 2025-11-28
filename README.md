@@ -1,6 +1,7 @@
 # FitJourney – Fitness & Meal Plan Website
 
-Multi-page responsive website built for **CPTR 331 – Assignment 5**.  
+Multi-page responsive website built for **CPTR 331 – Assignment 5**
+By- **Tyrese George(2023081058)**
 FitJourney helps users pick a training plan, follow matching workouts, see simple meal ideas, read success stories, and contact the “trainer”.
 
 The site is deployed on **GitHub Pages** here:
